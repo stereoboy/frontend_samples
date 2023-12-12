@@ -20,7 +20,10 @@ function App() {
       {(typeof backendData === 'undefined') ? (
         <p> Loading...</p>
       ): (
-        backendData.users.map((user, i) => (
+
+        // reference: https://stackoverflow.com/questions/69080597/%C3%97-typeerror-cannot-read-properties-of-undefined-reading-map
+
+        backendData.users?.map((user, i) => (
           <p key={i}> {user} </p>
         ))
       )}
