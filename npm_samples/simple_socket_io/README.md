@@ -9,6 +9,10 @@
     [<img src="https://img.youtube.com/vi/oFiw5VvgRFg/0.jpg" alt="drawing" width="240"/>](https://youtu.be/oFiw5VvgRFg)
     [<img src="https://img.youtube.com/vi/pRGOEtGjI-k/0.jpg" alt="drawing" width="240"/>](https://youtu.be/pRGOEtGjI-k)
 
+* socket.io
+  * Events:
+    * https://socket.io/docs/v4/server-api/#event-connect
+    * https://socket.io/docs/v4/server-api/#event-disconnect
 ### Description
 #### Backend
 * Database, Web Socket
@@ -47,15 +51,20 @@
     ```
     npm run dev
     ```
-* client
+* frontend
   * original install
     ```
-    cd client
+    mkdir frontend
+    cd frontend
     npx create-react-app .
+    npm i socket.io-client
     ```
   * reinstall from source
+    ```
+    npm install
+    ```
   * run
     ```
     npm start
     ```
-  * open http://localhost:3000 on browser
+* open http://localhost:3000 on browser
