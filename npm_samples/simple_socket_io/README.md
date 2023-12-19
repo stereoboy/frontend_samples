@@ -68,3 +68,45 @@
     npm start
     ```
 * open http://localhost:3000 on browser
+
+### Operations
+
+* mongodb on ubuntu
+  ```
+  $ mongo
+  MongoDB shell version v3.6.8
+  connecting to: mongodb://127.0.0.1:27017
+  Implicit session: session { "id" : UUID("7626b685-599c-44d6-a648-d85816839fca") }
+  MongoDB server version: 3.6.8
+  Welcome to the MongoDB shell.
+  For interactive help, type "help".
+  For more comprehensive documentation, see
+    http://docs.mongodb.org/
+  Questions? Try the support group
+    http://groups.google.com/group/mongodb-user
+  Server has startup warnings:
+  2023-12-19T09:21:29.575+0900 I STORAGE  [initandlisten]
+  2023-12-19T09:21:29.575+0900 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+  2023-12-19T09:21:29.575+0900 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+  2023-12-19T09:21:30.184+0900 I CONTROL  [initandlisten]
+  2023-12-19T09:21:30.184+0900 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+  2023-12-19T09:21:30.184+0900 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+  2023-12-19T09:21:30.184+0900 I CONTROL  [initandlisten]
+  >
+  ```
+  * drop (reset) the used database
+  ```
+  > show dbs
+  admin       0.000GB
+  config      0.000GB
+  kakao-talk  0.000GB
+  local       0.000GB
+  > use kakao-talk
+  switched to db kakao-talk
+  > db.dropDatabase()
+  { "dropped" : "kakao-talk", "ok" : 1 }
+  > ls
+  [native code]
+  > show dbs
+
+  ```
