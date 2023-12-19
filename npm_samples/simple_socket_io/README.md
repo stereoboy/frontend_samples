@@ -9,10 +9,15 @@
     [<img src="https://img.youtube.com/vi/oFiw5VvgRFg/0.jpg" alt="drawing" width="240"/>](https://youtu.be/oFiw5VvgRFg)
     [<img src="https://img.youtube.com/vi/pRGOEtGjI-k/0.jpg" alt="drawing" width="240"/>](https://youtu.be/pRGOEtGjI-k)
 
+    * https://www.youtube.com/watch?v=v2GWfmZOeXI
+
 * socket.io
   * Events:
     * https://socket.io/docs/v4/server-api/#event-connect
     * https://socket.io/docs/v4/server-api/#event-disconnect
+
+* Web
+  * https://www.freecodecamp.org/news/html-form-input-type-and-submit-button-example/
 ### Description
 #### Backend
 * Database, Web Socket
