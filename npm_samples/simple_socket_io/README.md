@@ -18,6 +18,12 @@
 
 * Web
   * https://www.freecodecamp.org/news/html-form-input-type-and-submit-button-example/
+
+### Result
+  <p align="left">
+    <img src="../../docs/screenshots/2023_12_19_screenshot_00.png" width="640">
+  </p>
+
 ### Description
 #### Backend
 * Database, Web Socket
