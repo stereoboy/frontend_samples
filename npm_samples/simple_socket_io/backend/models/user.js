@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
         required: [true, "User must type name"],
         unique: true,
     },
-    tocken: {
+    token: {
         type: String,
     },
     online: {
