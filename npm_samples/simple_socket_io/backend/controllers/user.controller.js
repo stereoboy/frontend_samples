@@ -29,4 +29,9 @@ userController.checkUser = async (sid) => {
     return user;
 }
 
+userController.setUserOffline = async (user) => {
+    user.online = false;
+    await user.save();
+}
+
 module.exports = userController;

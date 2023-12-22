@@ -11,6 +11,12 @@ module.exports = function (io) {
             console.log("user is logged in as ", userName);
             try {
                 const user = await userController.saveUser(userName, socket.id);
+
+                const WelcomeMessage = {
+                    chat: `${user.name} is joined to this room`,
+                    user: { id: null, name: 'system'},
+                };
+                io.emit("message", WelcomeMessage);
                 cb({ok:true, data:user});
             } catch (err) {
                 cb({ok: false, err: err.message});
@@ -29,8 +35,20 @@ module.exports = function (io) {
             }
         });
 
-        socket.on("disconnect",  (reason) => {
-            console.log("client disconnected", reason);
+        socket.on("disconnect",  async(reason) => {
+            try {
+                console.log("client disconnected", reason);
+                const user = await userController.checkUser(socket.id);
+                const GoodbyeMessage = {
+                    chat: `${user.name} is out of this room`,
+                    user: { id: null, name: 'system'},
+                };
+                await userController.setUserOffline(user);
+                io.emit("message", GoodbyeMessage);
+            } catch (err) {
+                console.error(err);
+            }
+
         });
     })
 };
