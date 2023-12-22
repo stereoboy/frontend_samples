@@ -29,7 +29,7 @@
 * Database, Web Socket
 * Modules
   * express - server
-  * mongoose - mongodb
+  * mongoose - mongodb (this project tested with version 3.6.9, default version of ubuntu 22.04)
   * cors - to help communication with frontend
   * dotenv - to use env variable
   * http -
@@ -120,4 +120,30 @@
   [native code]
   > show dbs
 
+  ```
+* show db entries
+  ```
+  > show dbs
+  admin       0.000GB
+  config      0.000GB
+  kakao-talk  0.000GB
+  local       0.000GB
+  > use kakao-talk
+  switched to db kakao-talk
+  > show collections
+  chats
+  users
+  > db.users
+  kakao-talk.users
+  > db.users.find()
+  { "_id" : ObjectId("658143474a641c80a368255e"), "name" : "test", "token" : "a4ZsjTNKPJ2j3P2CAAAf", "online" : true, "__v" : 0 }
+  { "_id" : ObjectId("658144e481906e6c5837f634"), "name" : "test2", "token" : "3VHGKP3HpMDttgmaAAAj", "online" : true, "__v" : 0 }
+  { "_id" : ObjectId("6581a53381906e6c5837f64a"), "name" : "user2", "token" : "4OSg7IyLjXv0Zb6CAAAH", "online" : false, "__v" : 0 }
+  { "_id" : ObjectId("6581a53881906e6c5837f64d"), "name" : "user1", "token" : "I2Cy_OFn2smVhr5vAAAD", "online" : true, "__v" : 0 }
+  { "_id" : ObjectId("6581a7a2f5716fc605ff9997"), "name" : "user", "token" : "q4wR0NqdmJzu_a_pAAAR", "online" : true, "__v" : 0 }
+  { "_id" : ObjectId("6581a871f5716fc605ff99c4"), "name" : "user3", "token" : "-K0CVyquj6GLVzl9AAAZ", "online" : true, "__v" : 0 }
+  > db.chats.find()
+  { "_id" : ObjectId("6581444f81906e6c5837f613"), "chat" : "test message", "user" : { "id" : ObjectId("658143474a641c80a368255e"), "name" : "test" }, "__v" : 0 }
+  { "_id" : ObjectId("6581450f81906e6c5837f645"), "chat" : "test message", "user" : { "id" : ObjectId("658143474a641c80a368255e"), "name" : "test" }, "__v" : 0 }
+  { "_id" : ObjectId("6581a53e81906e6c5837f650"), "chat" : "message", "user" : { "id" : ObjectId("6581a53881906e6c5837f64d"), "name" : "user1" }, "__v" : 0 }
   ```
