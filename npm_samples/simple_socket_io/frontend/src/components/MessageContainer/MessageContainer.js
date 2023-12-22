@@ -3,9 +3,12 @@ import React from "react";
 const MessageContainer = ({ messageList, user }) => {
   return (
     <div>
-      {messageList.map((message, index) => {
+      {messageList.map((message) => {
         return (
-          <div>
+          //
+          // reference: https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
+          //
+          <div key={message}>
             {message.user.name === "system" ? (
               <div>
                 <p>system: {message.chat}</p>
