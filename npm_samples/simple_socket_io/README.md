@@ -10,6 +10,8 @@
     [<img src="https://img.youtube.com/vi/pRGOEtGjI-k/0.jpg" alt="drawing" width="240"/>](https://youtu.be/pRGOEtGjI-k)
 
     * https://www.youtube.com/watch?v=v2GWfmZOeXI
+* 채팅 방 만들기
+  * https://hackmd.io/@oW_dDxdsRoSpl0M64Tfg2g/Syy1xDFep
 
 * socket.io
   * Events:
