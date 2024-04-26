@@ -5,6 +5,8 @@ const path = require('path');
 const express = require('express');
 const https = require('https');
 const fs = require('fs');
+
+// FIXME
 // const { Server } = require('socket.io');
 const socketIO = require('socket.io');
 
@@ -30,6 +32,7 @@ httpsServer.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+// FIXME
 // const io = new Server(httpsServer);
 const io = socketIO.listen(httpsServer);
 io.sockets.on('connection', function(socket) {
