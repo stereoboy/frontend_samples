@@ -2,7 +2,7 @@
 
 const os = require('os');
 const path = require('path');
-const nodeStatic = require('node-static');
+const express = require('express');
 const https = require('https');
 const fs = require('fs');
 // const { Server } = require('socket.io');
@@ -13,7 +13,10 @@ const keyPath = path.join(__dirname, '../server.key');
 const certPath = path.join(__dirname, '../server.crt');
 const publicPath = path.join(__dirname, 'public');
 
-const fileServer = new(nodeStatic.Server)(publicPath);
+const app = express();
+
+// Use static file server
+app.use(express.static(publicPath));
 
 // Read SSL certificate files
 const options = {
@@ -21,10 +24,11 @@ const options = {
     cert: fs.readFileSync(certPath),
 }
 
-const httpsServer = https.createServer(options, function(req, res) {
-  fileServer.serve(req, res);
-})
-httpsServer.listen(8080);
+const httpsServer = https.createServer(options, app);
+const port = 8080;
+httpsServer.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // const io = new Server(httpsServer);
 const io = socketIO.listen(httpsServer);
