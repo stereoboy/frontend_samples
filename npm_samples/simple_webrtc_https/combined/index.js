@@ -5,7 +5,8 @@ const path = require('path');
 const nodeStatic = require('node-static');
 const https = require('https');
 const fs = require('fs');
-const { Server } = require('socket.io');
+// const { Server } = require('socket.io');
+const socketIO = require('socket.io');
 
 // Define paths
 const keyPath = path.join(__dirname, '../server.key');
@@ -23,9 +24,10 @@ const options = {
 const httpsServer = https.createServer(options, function(req, res) {
   fileServer.serve(req, res);
 })
-httpsServer.listen(8000);
+httpsServer.listen(8080);
 
-const io = new Server(httpsServer);
+// const io = new Server(httpsServer);
+const io = socketIO.listen(httpsServer);
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
