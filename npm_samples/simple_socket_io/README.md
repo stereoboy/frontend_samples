@@ -1,5 +1,9 @@
-
 ### References
+
+* Official Examples
+  * https://github.com/socketio/socket.io/tree/master/examples/chat
+  * https://github.com/socketio/chat-example
+  * https://socket.io/get-started/chat
 
 * https://youtu.be/uE9Ncr6qInQ
 * https://youtu.be/oFiw5VvgRFg
