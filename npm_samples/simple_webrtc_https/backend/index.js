@@ -4,7 +4,6 @@ const path = require('path');
 const { Server } = require('socket.io');
 const express = require('express');
 
-
 // Define paths
 const keyPath = path.join(__dirname, '../server.key');
 const certPath = path.join(__dirname, '../server.crt');
@@ -32,7 +31,6 @@ httpServer.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
 
-
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
@@ -40,6 +38,7 @@ io.sockets.on('connection', function(socket) {
     var array = ['Message from server:'];
     array.push.apply(array, arguments);
     socket.emit('log', array);
+    // console.log(arguments)
   }
 
   socket.on('message', function(message) {
@@ -49,13 +48,18 @@ io.sockets.on('connection', function(socket) {
     socket.broadcast.emit('message', message);
   });
 
-  socket.on('create or join', function(room) {
+  socket.on('create or join', async function(room) {
     log('Received request to create or join room ' + room);
 
     console.log('Received request to join room ' + room);
 
-    var clientsInRoom = io.sockets.adapter.rooms[room];
-    var numClients = clientsInRoom ? Object.keys(clientsInRoom.sockets).length : 0;
+    //
+    // references
+    //   - https://stackoverflow.com/questions/69432987/socket-io-room-size-4-x
+    //   - https://socket.io/docs/v3/migrating-from-3-x-to-4-0/
+    //
+    const sockets = await io.in(room).fetchSockets();
+    const numClients = sockets ? sockets.length : 0;
     log('Room ' + room + ' now has ' + numClients + ' client(s)');
 
     if (numClients === 0) {
