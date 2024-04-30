@@ -33,9 +33,8 @@ Email Address []:jy@wom.ai
 ```
 
 ### Test
-* https://localhost:8080/ (Current Status)
-
-* https://<ip address>:8080/ (Goal)
+* https://localhost:8080
+* https://<ip address>:8080
 
 ### Combined
 ```
