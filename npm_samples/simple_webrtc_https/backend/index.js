@@ -21,9 +21,9 @@ const options = {
 const httpServer = createServer(options, app);
 
 const io = new Server(httpServer, {
-    cors: {
-        origin: "https://localhost:8080",
-    },
+  cors: {
+    origin: "*", // Allow requests from any origin
+  },
 });
 
 const port = 5000
