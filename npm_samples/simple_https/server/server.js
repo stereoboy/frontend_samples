@@ -12,8 +12,8 @@ const certPath = path.join(__dirname, 'server.crt');
 
 // Read SSL certificate files
 const options = {
-    // key: fs.readFileSync(keyPath),
-    // cert: fs.readFileSync(certPath),
+    key: fs.readFileSync(keyPath),
+    cert: fs.readFileSync(certPath),
 }
 
 // Define a simple route
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 const server = https.createServer(options, app);
 
 // Start the server
-const port = 5000;
+const port = 8080;
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

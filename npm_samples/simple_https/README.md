@@ -18,26 +18,7 @@
     <img src="../../docs/screenshots/2024_03_21_screenshot_01.png" width="640">
   </p>
 
-```diff
-diff --git a/npm_samples/simple_https/server/server.js b/npm_samples/simple_https/server/server.js
-index 6995888..1d49674 100644
---- a/npm_samples/simple_https/server/server.js
-+++ b/npm_samples/simple_https/server/server.js
-@@ -4,9 +4,10 @@ const https = require('https');
- const fs = require('fs');
-
- const options = {
--    key: fs.readFileSync('/home/rofox/work/frontend_samples/npm_samples/simple_https/server/server.key'), // replace it with your key path
--    cert: fs.readFileSync('/home/rofox/work/frontend_samples/npm_samples/simple_https/server/server.crt'), // replace it with your certificate path
--}
-+    // key: fs.readFileSync('/home/rofox/work/frontend_samples/npm_samples/simple_https/server/server.key'), // replace it with your key path
-+    // cert: fs.readFileSync('/home/rofox/work/frontend_samples/npm_samples/simple_https/server/server.crt'), // replace it with your certificate path
-+  }
-
- https.createServer(options, (req, res) => {
-   res.writeHead(200);
-```
-### Installation
+### Install
 ```
 mkdir server
 cd server
@@ -46,9 +27,13 @@ npm i express fs https
 npm i nodemon -D
 ```
 ### Run
+* run server
 ```
 npm run dev
 ```
+* open browser
+  * https://<ip address>:8080/
+  * https://localhost:8080/
 
 ## Generation: CAbundle.pem, crtchain.pem, private.key
 ### References
