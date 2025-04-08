@@ -1,0 +1,56 @@
+.social-login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.social-login-title {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.social-login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.facebook-login-button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.facebook-login-button:hover {
+  background-color: #166fe5;
+}
+
+.facebook-login-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+}
